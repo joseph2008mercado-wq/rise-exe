@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Rise.App/Rise.App.csproj" />
+    <Project Path="src/Rise.Core/Rise.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Rise.Tests/Rise.Tests.csproj" />
+  </Folder>
+</Solution>
