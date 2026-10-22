@@ -1,0 +1,18 @@
+# Design and sound notes
+
+The interface takes structural inspiration from [Windows 96](https://windows96.net/), [Windows 93](https://www.windows93.net/), the [Winamp Skin Museum](https://skins.webamp.org/), [Cameron's World](https://www.cameronsworld.net/), and the [original Space Jam site](https://www.spacejam.com/1996/), with a user-provided Winamp reference guiding the final skeuomorphic skin: thick beveled metal, screw heads, machined rim grooves, a concentric hardware dial, recessed cobalt glass, compact buttons and faders. Labels describe real features and state. All vector UI, segmented digits, icon pixels, and compositions are original; none of those sites' or the reference skin's assets are redistributed.
+
+[Edworthy, Loxley & Dennis (1991)](https://pubmed.ncbi.nlm.nih.gov/1860703/) studied how frequency, harmonics, envelopes, rhythm and melodic organization affect perceived urgency. This informed the deliberate alternation, dissonant harmonics, pulses, and strong envelopes in the industrial preset. Perceived urgency is not a clinical guarantee of waking effectiveness.
+
+[McFarlane et al. (2020)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0215788) reported an association between perceived melodicity and lower self-reported sleep inertia in a small observational questionnaire study. It does not establish that harshness or volume improves waking. This motivated including a clearly melodic alternative, rather than claiming a universal optimum.
+
+## Original compositions
+
+- **INDUSTRIAL.EXE**: eight-second mechanical composition, 110 Hz saw motor, eight alternating warning pitches, semitone-detuned layers, inharmonic FM metal hits, pneumatic 7-against-8 accents, drilling noise, siren modulation, and a pounding kick ostinato. Dense bounded saturation raises perceived loudness.
+- **DIGITALHELL.WAV**: eight-second changing modem sections, ascending/descending sweeps, deterministic quantized sample-and-hold noise, short-duty pulse glitches, and a frantic rhythmic gate.
+- **CURSEDMIDI.MID**: original 32-beat composition at 105 BPM with a 32-step square-wave tune, octave response, moving bass, major arpeggios, tritone brass, abrasive octave/semitone trills, kick and noise percussion. The name is aesthetic: it is synthesized PCM, not a MIDI file.
+- **EMBARRASSMENT**: original brass/kazoo fanfare mixed with the alarm and snare-like noise. No speech service, network, microphone, or recordings required. Offline announcements were optional and are omitted.
+
+Synthesis runs at 44.1 kHz, mono, with short boundary ramps and an infinite sample provider. A dedicated, dominant bass bus provides a 48 Hz fundamental for Industrial, 55 Hz for DigitalHell, and a moving bass root beginning at 65.4 Hz for CursedMidi, plus low kick transients. Its pre-compression mix weight is 0.95 versus 0.32 for upper-frequency material. Tests measure fundamental amplitudes around 0.80–0.83 at maximum intensity, and require at least 0.45 in every preset. Intensity adjusts saturation; a final ceiling bounds samples to ±0.94. App volume is applied afterward. Spectrum bars measure the actual PCM buffer from 30 Hz upward. The app never modifies Windows master volume. Skullcandy Crusher haptic response requires testing on the actual headphones.
+
+Native lifecycle references: [WPF Window.Closing](https://learn.microsoft.com/en-us/dotnet/api/system.windows.window.closing), [WakeToRun task schema](https://learn.microsoft.com/en-us/windows/win32/taskschd/taskschedulerschema-waketorun-settingstype-element). The user can always sign out, shut down, or force-terminate the process.
